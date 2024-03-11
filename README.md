@@ -1,8 +1,7 @@
-# YouDaoXmlTranslateToolsTkinter
+# DA_Tools
 
 #### 介绍
-1、适用于安卓开发的xml翻译工具，，目前仅支持有道翻译，后续可能支持更多的翻译引擎
-2、使用python原生GUI库tkinter制作
+自开发工具集合
 
 #### 软件架构
 软件架构说明
