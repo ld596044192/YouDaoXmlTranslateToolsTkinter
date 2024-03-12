@@ -11,7 +11,7 @@ from xml_merge_demo.xml_compare import CompareXml
 from extra_functions.single_xml_translate import SingleXmlTranslate
 from extra_functions import module_illustrate
 from Settings import Setting
-import extra_functions.zhoufei_tools as zhoufei_tools
+# import extra_functions.zhoufei_tools as zhoufei_tools
 import youdao_translate
 import pyperclip,os,sys
 from my_thread import MyThread
@@ -38,7 +38,7 @@ trans_log_file_path = trans_log_path + '\\trans_path.log'  # 记录翻译文件�
 youdao_id_key_path = trans_file + '\\youdao_id_key.log'  # 记录有道翻译ID和KEY
 version_file_path = resource_path(os.path.join('version', 'version_zh_CN.txt'))  # 版本文件路径
 tools_ico = resource_path(os.path.join('icon', 'my-da.ico'))  # 工具图标路径
-version = '1.1.3'  # 版本号
+version = '1.1.4'  # 版本号
 
 if not os.path.exists(trans_file_path):
     os.makedirs(trans_file_path)
@@ -160,12 +160,12 @@ class MainForm(object):
             self.close_button.place(x=150, y=100)
             self.close_button.bind('<Button-1>', lambda x:self.second_id_key_close())
 
-            # lj体验按钮
-            self.lj_button = tk.Button(self.id_key_root, text='体验', width=10)
+            # lj体验按钮(该功能已屏蔽)
+            # self.lj_button = tk.Button(self.id_key_root, text='体验', width=10)
             self.lj_button_disable = tk.Button(self.id_key_root, text='体验', width=10)
             self.lj_button_disable.config(state='disabled')
-            self.lj_button.place(x=250, y=100)
-            self.lj_button.bind('<Button-1>',lambda x: threading.Thread(target=self.experience).start())
+            self.lj_button_disable.place(x=250, y=100)
+            # self.lj_button.bind('<Button-1>',lambda x: threading.Thread(target=self.experience).start())
 
             # 内容显示label
             self.id_key_content_str = tk.StringVar()
@@ -175,7 +175,7 @@ class MainForm(object):
                              "\n2.申请后，将ID和KEY填入上面的输入框中，然后点击保存按钮" \
                              "\n3.本工具目前仅支持有道翻译，不想使用点击关闭按钮关闭即可，但无法使用该工具" \
                              "\n4.如果已有申请的ID和KEY，输入后直接点击保存按钮正常使用" \
-                             "\n5.如没有申请ID和KEY但想体验，点击“体验”按钮即可使用，注：该体验ID和KEY有体验金额度限制，超过后无法使用，由罗靖提供"
+                             "\n5.体验功能仅开发者测试用途，开源分享时已屏蔽"
             self.id_key_content_str.set(id_key_content)
 
             self.id_key_root.protocol('WM_DELETE_WINDOW', self.id_key_close)
@@ -251,27 +251,28 @@ class MainForm(object):
         except Exception:
             pass
 
-    def experience(self):
-        # 体验有道翻译
-        self.lj_button.place_forget()
-        self.lj_button_disable.place(x=250, y=100)
-        self.id_key_root.wm_attributes('-topmost', 0)
-        if tkinter.messagebox.askokcancel('是否体验','是否免费体验本工具？\n注：该体验账号体验金有限，请勿过度使用，否则无法体验'):
-            experience_id = '1a2fc055f4f9d8dc'
-            experience_key = 'jznSJaGFw7PiglQ57rWCpY4ZhMlsPdBn'
-
-            win32api.SetFileAttributes(youdao_id_key_path, win32con.FILE_ATTRIBUTE_NORMAL)
-            with open(youdao_id_key_path, 'w', encoding='utf-8') as f:
-                f.write(f'Your_Id={experience_id}\nYour_Key={experience_key}')
-            win32api.SetFileAttributes(youdao_id_key_path, win32con.FILE_ATTRIBUTE_HIDDEN)
-            self.id_key_root.destroy()
-            self.root.deiconify()  # 显示主窗口
-        try:
-            self.id_key_root.wm_attributes('-topmost', 1)
-            self.lj_button_disable.place_forget()
-            self.lj_button.place(x=250, y=100)
-        except Exception:
-            pass
+    # 体验功能仅为测试用途，开源分享需要废弃
+    # def experience(self):
+    #     # 体验有道翻译
+    #     self.lj_button.place_forget()
+    #     self.lj_button_disable.place(x=250, y=100)
+    #     self.id_key_root.wm_attributes('-topmost', 0)
+    #     if tkinter.messagebox.askokcancel('是否体验','是否免费体验本工具？\n注：该体验账号体验金有限，请勿过度使用，否则无法体验'):
+    #         experience_id = '（id已删除）'
+    #         experience_key = '（key已删除）'
+    #
+    #         win32api.SetFileAttributes(youdao_id_key_path, win32con.FILE_ATTRIBUTE_NORMAL)
+    #         with open(youdao_id_key_path, 'w', encoding='utf-8') as f:
+    #             f.write(f'Your_Id={experience_id}\nYour_Key={experience_key}')
+    #         win32api.SetFileAttributes(youdao_id_key_path, win32con.FILE_ATTRIBUTE_HIDDEN)
+    #         self.id_key_root.destroy()
+    #         self.root.deiconify()  # 显示主窗口
+    #     try:
+    #         self.id_key_root.wm_attributes('-topmost', 1)
+    #         self.lj_button_disable.place_forget()
+    #         self.lj_button.place(x=250, y=100)
+    #     except Exception:
+    #         pass
 
     def close_handle(self):
         # 退出程序需要处理或结束任务
@@ -422,12 +423,13 @@ class MainForm(object):
         self.compare_xml_button.place(x=400, y=210)
         self.compare_xml_button.bind('<Button-1>', lambda x:threading.Thread(target=CompareXml().root_form,args=(self.compare_xml_button,self.compare_xml_button_disable)).start())
 
-        # 创建周飞工具集合按钮
-        self.zhoufei_button = tk.Button(self.root, text='周飞工具', width=10)
-        self.zhoufei_button_disable = tk.Button(self.root, text='周飞工具', width=10)
+        # 该功能已废弃
+        # self.zhoufei_button = tk.Button(self.root, text='功能已废弃', width=10)
+        self.zhoufei_button_disable = tk.Button(self.root, text='功能已废弃', width=10)
         self.zhoufei_button_disable.config(state='disabled')
-        self.zhoufei_button.place(x=400, y=250)
-        self.zhoufei_button.bind('<Button-1>', lambda x:threading.Thread(target=zhoufei_tools.ZFTools().root_form,args=(self.zhoufei_button,self.zhoufei_button_disable)).start())
+        self.zhoufei_button_disable.place(x=400, y=250)
+        # 已屏蔽入口
+        # self.zhoufei_button.bind('<Button-1>', lambda x:threading.Thread(target=zhoufei_tools.ZFTools().root_form,args=(self.zhoufei_button,self.zhoufei_button_disable)).start())
 
         # 设置按钮
         self.setting_button = tk.Button(self.root, text='设置', width=10)
