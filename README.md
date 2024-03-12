@@ -70,7 +70,7 @@ pyinstaller <前面文件夹省略>\xml批量翻译工具.spec
 
 首先把“xml批量翻译工具.spec”命名为其他你想要的名称，再使用记事本打开spec文件夹
 
-![image-20240312213147057](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312213147057.png)
+![image-20240312213147057](readme_img\image-20240312213147057.png)
 
 这样直接使用命令打包后生成的工具名称就是你想要的，不用每次都自行更改名称
 
@@ -78,81 +78,81 @@ pyinstaller <前面文件夹省略>\xml批量翻译工具.spec
 
 （1）该工具需要有道翻译的id和key，如果没有需要自行到 http://ai.youdao.com/ 进行注册
 
-![image-20240312213352914](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312213352914.png)
+![image-20240312213352914](readme_img\image-20240312213352914.png)
 
 成功注册并进行个人实名认证后，即可获得可以免费使用的50体验金，一旦体验金使用完毕需要自行充值才能继续使用有道翻译功能
 
 （2）创建应用库后即可获得id和key
 
-![image-20240312213605774](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312213605774.png)
+![image-20240312213605774](readme_img\image-20240312213605774.png)
 
 （3）然后把复制的ID和Key，填入下面方框，并点击保存
 
-![image-20240312213641292](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312213641292.png)
+![image-20240312213641292](readme_img\image-20240312213641292.png)
 
 （4）必须输入可用的ID和Key，否则翻译功能不可用
 
 下面这个为工具的主界面，属于“xml批量翻译”的主要功能
 
-![image-20240312213815455](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312213815455.png)
+![image-20240312213815455](readme_img\image-20240312213815455.png)
 
 （5）可以点击“模块说明”查看具体的使用说明
 
-![image-20240312214025274](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312214025274.png)
+![image-20240312214025274](readme_img\image-20240312214025274.png)
 
 （6）本工具也提供了模版作为参考，如果你的项目翻译文件夹不是这个结构，那么直接在本模版上进行操作
 
-![image-20240312214231698](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312214231698.png)
+![image-20240312214231698](readme_img\image-20240312214231698.png)
 
-![image-20240312214313755](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312214313755.png)
+![image-20240312214313755](readme_img\image-20240312214313755.png)
 
-![image-20240312214410324](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312214410324.png)
+![image-20240312214410324](readme_img\image-20240312214410324.png)
 
 注：values文件夹里的xml文件名称必须为strings.xml，否则提示出错
 
-![image-20240312221309330](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312221309330.png)
+![image-20240312221309330](readme_img\image-20240312221309330.png)
 
 （7）需要翻译的xml文件内容格式如下
 
-![image-20240312214720953](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312214720953.png)
+![image-20240312214720953](readme_img\image-20240312214720953.png)
 
 （8）点击翻译，将会自动把中文翻译为英文，点击“复制”按钮也可直接把带xml格式的内容复制到你想要的位置上
 
-![image-20240312214838512](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312214838512.png)
+![image-20240312214838512](readme_img\image-20240312214838512.png)
 
-![image-20240312215132939](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312215132939.png)
+![image-20240312215132939](readme_img\image-20240312215132939.png)
 
 （9）如果需要批量翻译多种语言，可以直接复制文件夹并修改如下
 
-![image-20240312215556266](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312215556266.png)
+![image-20240312215556266](readme_img\image-20240312215556266.png)
 
 文件夹命名规则：values- 后面跟的是有道翻译引擎支持的语言代码，文件夹可为空
 
 （10）批量翻译效果
 
-![image-20240312215828811](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312215828811.png)
+![image-20240312215828811](readme_img\image-20240312215828811.png)
 
-![image-20240312215903806](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312215903806.png)
+![image-20240312215903806](readme_img\image-20240312215903806.png)
 
 文件过多就不再展示，具体自行体验
 
 （11）单文件翻译
 
-![image-20240312220142765](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312220142765.png)
+![image-20240312220142765](readme_img\image-20240312220142765.png)
 
-![image-20240312220224929](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312220224929.png)
+![image-20240312220224929](readme_img\image-20240312220224929.png)
 
-![image-20240312220247579](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312220247579.png)
+![image-20240312220247579](readme_img\image-20240312220247579.png)
 
 （12）定制功能（仅保留，但不一定适合所有人）
 
-![image-20240312220334510](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312220334510.png)
+![image-20240312220334510](readme_img\image-20240312220334510.png)
 
 （13）也可以支持直接复制内容进行翻译，复制的内容同样需要符合xml文件的格式
 
-![image-20240312220722576](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312220722576.png)
+![image-20240312220722576](readme_img\image-20240312220722576.png)
 
-![image-20240312220813264](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312220813264.png)
+![image-20240312220813264](readme_img\image-20240312220813264.png)
 
 这个直接添加内容翻译，批量功能会优先翻译这个，并且翻译出来的内容不会覆盖xml文件，而是追加原有的xml文件中，这是为了xml翻译的安全而考虑，注意如果没有xml文件会自动创建xml文件并写入！！！
 
@@ -170,11 +170,11 @@ pyinstaller <前面文件夹省略>\xml批量翻译工具.spec
 
 5、关于本工具的图标设置，可修改如下几处：
 
-![image-20240312222138133](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312222138133.png)
+![image-20240312222138133](readme_img\image-20240312222138133.png)
 
 打包后的工具图标，修改spec文件：
 
-![image-20240312222238924](C:\Users\59604\AppData\Roaming\Typora\typora-user-images\image-20240312222238924.png)
+![image-20240312222238924](readme_img\image-20240312222238924.png)
 
 然后把打包后的工具移到其他位置刷新，图标即可更新，如果不行就需要按照pyinstaller.txt重新运行打包命令，再修改spec，最终再次打包即可成功！！！
 
